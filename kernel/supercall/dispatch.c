@@ -994,6 +994,12 @@ int ksu_handle_susfs_cmd(unsigned int cmd, void __user **arg)
         return 0;
     }
 #endif //#ifdef CONFIG_KSU_SUSFS_SUS_KSTAT
+#ifdef CONFIG_KSU_SUSFS_TRY_UMOUNT
+    case CMD_SUSFS_ADD_TRY_UMOUNT: {
+        susfs_add_try_umount(arg);
+        return 0;
+    }
+#endif //#ifdef CONFIG_KSU_SUSFS_TRY_UMOUNT
 #ifdef CONFIG_KSU_SUSFS_SPOOF_UNAME
     case CMD_SUSFS_SET_UNAME: {
         susfs_set_uname(arg);

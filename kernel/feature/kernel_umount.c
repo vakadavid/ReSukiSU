@@ -88,7 +88,11 @@ static void ksu_sys_umount(const char *mnt, int flags)
 
 #endif
 
+#if !defined(CONFIG_KSU_SUSFS_TRY_UMOUNT)
+static void try_umount(const char *mnt, int flags)
+#else
 void try_umount(const char *mnt, int flags)
+#endif
 {
     struct path path;
     int err = kern_path(mnt, 0, &path);

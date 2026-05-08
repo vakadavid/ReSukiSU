@@ -14,6 +14,8 @@ display_usage() {
 initialize_variables() {
 	if test -d "$GKI_ROOT/common/drivers"; then
 		 DRIVER_DIR="$GKI_ROOT/common/drivers"
+	elif test -d "$GKI_ROOT/aosp/drivers"; then
+		 DRIVER_DIR="$GKI_ROOT/aosp/drivers"
 	elif test -d "$GKI_ROOT/drivers"; then
 		 DRIVER_DIR="$GKI_ROOT/drivers"
 	else
@@ -41,7 +43,7 @@ setup_kernelsu() {
 	echo "[+] Setting up KernelSU..."
 	# Clone the repository and rename it to KernelSU
 	if [ ! -d "$GKI_ROOT/KernelSU" ]; then
-		git clone https://github.com/ReSukiSU/ReSukiSU KernelSU
+		git clone https://github.com/vakadavid/ReSukiSU KernelSU
 		echo "[+] Repository cloned."
 	fi
 	cd "$GKI_ROOT/KernelSU"
