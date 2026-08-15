@@ -28,6 +28,10 @@
 #include "feature/kernel_umount.h"
 #include "feature/sucompat.h"
 
+#ifdef CONFIG_KSU_SUSFS_TRY_UMOUNT
+extern void susfs_try_umount(uid_t uid);
+#endif // #ifdef CONFIG_KSU_SUSFS_TRY_UMOUNT
+
 static inline void ksu_set_file_immutable(const char *path_name, bool immutable)
 {
     struct path path;
