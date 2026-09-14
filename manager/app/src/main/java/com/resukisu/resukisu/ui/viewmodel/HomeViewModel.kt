@@ -47,9 +47,9 @@ sealed interface HomeUiEvent {
 }
 
 class HomeViewModel(
-    private val homeStateRepository: HomeStateRepository,
-    private val superUserRepository: SuperUserRepository,
-    private val moduleRepository: ModuleRepository,
+    val homeStateRepository: HomeStateRepository,
+    superUserRepository: SuperUserRepository,
+    moduleRepository: ModuleRepository,
     private val ksuCliRepository: KsuCliRepository,
     private val checkManagerUpdate: CheckManagerUpdateUseCase,
     private val getKernelStatus: GetKernelStatusUseCase,

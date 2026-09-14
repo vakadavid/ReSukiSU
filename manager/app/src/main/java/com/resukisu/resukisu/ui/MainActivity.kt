@@ -80,7 +80,7 @@ class MainActivity : ComponentActivity() {
             splashScreen.setKeepOnScreenCondition {
                 shouldKeepStartupSplash(
                     startupState = startupState.value,
-                    homeInitialDataLoaded = homeViewModel.uiState.value.isInitialDataLoaded,
+                    homeInitialDataLoaded = homeViewModel.homeStateRepository.state.value.isInitialDataLoaded,
                 )
             }
 
